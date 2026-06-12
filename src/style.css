@@ -69,7 +69,7 @@ img {
 	padding: 0 42px;
 }
 
-.works-grid {
+.work-grid {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1rem;
@@ -124,13 +124,33 @@ img {
 	margin-bottom: 44px;
 }
 
+.footer {
+	display: flex;
+	flex-direction: column;
+	background-color: #0891b2;
+}
+
+.footer__contact {
+	padding: 60px 44px 178px 44px;
+	color: #fff;
+}
+
 @media (min-width: 1000px) {
 	.header {
 		flex-direction: row;
 		align-items: center;
 	}
 
-	.works-grid {
+	.work-grid {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.footer {
+		flex-direction: row;
+		padding: 142px;
+	}
+
+	.footer__contact {
+		padding: 0px;
 	}
 }
