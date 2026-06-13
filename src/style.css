@@ -190,10 +190,64 @@ img {
 	width: 24px;
 }
 
+@media (min-width: 500px) {
+	.header {
+		display: block;
+		padding: 40px 50px 0 30px;
+		margin-bottom: 45px;
+		overflow: visible;
+	}
+
+	.header__photo {
+		float: left;
+		padding: 0;
+		margin: 0 28px 12px 0;
+		width: 360px;
+		aspect-ratio: auto;
+		z-index: 2;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+	}
+
+	.header__photo h1 {
+		top: 10px;
+		left: 280px;
+		bottom: auto;
+		width: max-content;
+		font-size: 2.5rem;
+		line-height: 1;
+	}
+
+	.header__about {
+		margin: 90px auto 0;
+		padding: 60px 36px 36px;
+		background-color: #fff;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+	}
+
+	.header__about h2 {
+		margin-bottom: 0.75rem;
+	}
+
+	.header__socials {
+		justify-content: flex-end;
+		margin-top: 1.5rem;
+	}
+}
+
 @media (min-width: 1000px) {
 	.header {
+		display: flex;
 		flex-direction: row;
-		align-items: center;
+	}
+
+	.header__photo {
+		float: none;
+	}
+
+	.header__photo h1 {
+		left: 0;
+		bottom: 0;
+		top: auto;
 	}
 
 	.work-grid {
