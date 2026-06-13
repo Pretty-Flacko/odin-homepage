@@ -29,6 +29,25 @@ img {
 	display: block;
 }
 
+a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #000;
+	text-decoration: none;
+	transition:
+		color 300ms ease,
+		transform 300ms ease;
+}
+a svg {
+	fill: currentColor;
+}
+
+a:hover {
+	color: #0891b2;
+	transform: translateY(-2px);
+}
+
 .header {
 	display: flex;
 	flex-direction: column;
@@ -45,7 +64,7 @@ img {
 	position: absolute;
 	inset: 0;
 	background-color: #0891b2;
-	clip-path: polygon(0 0, 100% 0, 100% 40%, 0 55%);
+	clip-path: polygon(0 0, 100% 0, 100% 40%, 0 50%);
 	z-index: -1;
 }
 
@@ -54,7 +73,7 @@ img {
 	flex-direction: column;
 	align-items: center;
 	position: relative;
-	padding: 56px 66px 0 66px;
+	padding: 56px clamp(24px, 16vw, 66px) 0;
 	width: 100%;
 	aspect-ratio: 618/990;
 }
@@ -67,7 +86,7 @@ img {
 
 .header__photo h1 {
 	position: absolute;
-	left: 76px;
+	left: 66px;
 	bottom: 0px;
 	text-align: left;
 	font-size: 3rem;
@@ -75,6 +94,7 @@ img {
 	line-height: 1.2;
 	color: #fff;
 	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+	width: min-content;
 }
 
 .header__about {
@@ -180,6 +200,8 @@ img {
 }
 
 .work__links {
+	display: flex;
+	align-items: center;
 	gap: 10px;
 }
 
@@ -241,6 +263,10 @@ img {
 	margin-top: 26px;
 }
 
+.footer__socials a:hover {
+	color: #fff;
+}
+
 .footer__socials svg {
 	width: 28px;
 	height: 28px;
@@ -254,16 +280,20 @@ img {
 @media (min-width: 500px) {
 	.header {
 		display: block;
-		padding: 40px 50px 0 30px;
+		padding: 40px 28px 0;
 		margin-bottom: 45px;
 		overflow: visible;
+	}
+
+	.header::before {
+		clip-path: polygon(0 0, 100% 0, 100% 40%, 0 80%);
 	}
 
 	.header__photo {
 		float: left;
 		padding: 0;
 		margin: 0 28px 12px 0;
-		width: 360px;
+		width: clamp(230px, 46vw, 360px);
 		aspect-ratio: auto;
 		z-index: 2;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
@@ -271,7 +301,7 @@ img {
 
 	.header__photo h1 {
 		top: 10px;
-		left: 280px;
+		left: 78%;
 		bottom: auto;
 		width: max-content;
 		font-size: 2.5rem;
@@ -279,13 +309,14 @@ img {
 	}
 
 	.header__about {
-		margin: 90px auto 0;
+		margin: 90px 0 0 clamp(28px, 7vw, 60px);
 		padding: 60px 36px 36px;
 		background-color: #fff;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 	}
 
 	.header__about h2 {
+		font-size: clamp(1.9rem, 5vw, 2.5rem);
 		margin-bottom: 0.75rem;
 	}
 
@@ -374,6 +405,10 @@ img {
 		overflow: hidden;
 	}
 
+	.header::before {
+		clip-path: polygon(0 0, 100% 0, 100% 42%, 0 95%);
+	}
+
 	.header__photo {
 		float: none;
 		flex: 0 0 460px;
@@ -406,7 +441,7 @@ img {
 	}
 
 	.header__about p {
-		font-size: 1.45rem;
+		font-size: 1.25rem;
 	}
 
 	.main {
